@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tws.repository.PackagesMapper">
+    <select id="selectAll" resultType="tws.entity.Packages">
+        select * from `packages`;
+    </select>
+
+    <insert id="insert" parameterType="tws.entity.Packages">
+       insert into `packages`(`packageId`,`name`,`telephone`,`weight`,`status`,`dateTime`)
+       values(#{packages.packageId},#{packages.name},#{packages.telephone},#{packages.weight},#{packages.status},#{packages.dateTime});
+    </insert>
+</mapper>
